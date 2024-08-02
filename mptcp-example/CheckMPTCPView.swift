@@ -8,7 +8,7 @@ import SwiftUI
 
 typealias MPTCPMode = URLSessionConfiguration.MultipathServiceType
 
-struct ContentView: View {
+struct CheckMPTCPView: View {
     
     @State private var loading: Bool = false
     @State private var using_mptcp: Bool = false
@@ -16,53 +16,52 @@ struct ContentView: View {
     @State private var savedError: Error? = nil
     @State private var mptcp_mode: MPTCPMode = .none
     @State private var client: any MPTCPClient = ContainerClient.client_list[0].client
-    @State private var tranfer: Transfers = .check
     @State private var response_time: UInt64 = 0
     
     var body: some View {
-       
-        VStack {
-
-            MPTCPModeSelectionView(mptcp_mode: $mptcp_mode){
+        NavigationStack {
+            VStack {
+                
+                MPTCPModeSelectionView(mptcp_mode: $mptcp_mode){
+                    refresh()
+                }
+                
+                ClientSelectionView(client: $client){
+                    refresh()
+                }
+                
+                Spacer()
+                
+                if loading{
+                    ProgressView()
+                }else {
+                    ResultsView(using_mptcp: using_mptcp, tranfer: .check, response_time: response_time)
+                }
+                Spacer()
+            }
+            .padding()
+            .toolbar{
+                ToolbarItem(placement: .topBarTrailing){
+                    Button{
+                        refresh()
+                    } label: {
+                        Label("Refresh", systemImage: "arrow.clockwise")
+                    }
+                }
+            }
+            .task {
                 refresh()
             }
-
-            ClientSelectionView(client: $client){
-                refresh()
+            .alert(
+                "An error occured",
+                isPresented: $didError,
+                presenting: savedError
+            ) { _ in
+                Button("Ok") {}
             }
-            
-            TransferSelectionView(tranfer: $tranfer){
-                refresh()
+            message: { error in
+                Text(error.localizedDescription)
             }
-            
-            Spacer()
-            
-            if loading{
-                ProgressView()
-            }else {
-                ResultsView(using_mptcp: using_mptcp, tranfer: tranfer, response_time: response_time)
-            }
-            
-            Spacer()
-            
-            Button{
-                refresh()
-            } label: {
-                Label("Refresh", systemImage: "arrow.clockwise")
-            }
-        }
-        .padding()
-        .task {
-            refresh()
-        }
-        .alert(
-            "An error occured",
-            isPresented: $didError,
-            presenting: savedError
-        ) { _ in
-            Button("Ok") {}
-        } message: { error in
-            Text(error.localizedDescription)
         }
     }
 
@@ -78,7 +77,7 @@ struct ContentView: View {
         
         do{
             let start = DispatchTime.now()
-            let data = try await client.fetch(url: tranfer.url)
+            let data = try await client.fetch(url: Transfers.check.url)
             let end = DispatchTime.now()
             
             response_time = (end.uptimeNanoseconds - start.uptimeNanoseconds) / 1_000_000
@@ -95,5 +94,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    CheckMPTCPView()
 }

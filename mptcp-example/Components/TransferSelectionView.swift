@@ -14,7 +14,9 @@ struct TransferSelectionView: View {
     
     var body: some View {
         Picker("Transfer type", selection: $tranfer){
-            ForEach(Transfers.allCases){ transfer in
+            ForEach(Transfers.allCases.filter{t in
+                t != .check
+            }){ transfer in
                 Text(transfer.name)
             }
         }

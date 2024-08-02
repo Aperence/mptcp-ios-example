@@ -9,9 +9,19 @@ import SwiftUI
 
 @main
 struct mptcp_exampleApp: App {
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabView {
+                CheckMPTCPView().tabItem {
+                    Label("Check MPTCP", systemImage: "gear.badge")
+                }
+
+
+                BenchmarkView().tabItem{
+                    Label("Benchmark", systemImage: "laptopcomputer.and.arrow.down")
+                }
+            }
         }
     }
 }

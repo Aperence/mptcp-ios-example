@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B90EBD42C5BC9420003AB87 /* BenchmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B90EBD32C5BC9420003AB87 /* BenchmarkView.swift */; };
+		1B90EBD62C5BCE360003AB87 /* RunBenchmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B90EBD52C5BCE360003AB87 /* RunBenchmarkView.swift */; };
 		1BCE936A2C5BC2C6006820CA /* mptcp_exampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCE93692C5BC2C6006820CA /* mptcp_exampleApp.swift */; };
-		1BCE936C2C5BC2C6006820CA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCE936B2C5BC2C6006820CA /* ContentView.swift */; };
+		1BCE936C2C5BC2C6006820CA /* CheckMPTCPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCE936B2C5BC2C6006820CA /* CheckMPTCPView.swift */; };
 		1BCE936E2C5BC2C7006820CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BCE936D2C5BC2C7006820CA /* Assets.xcassets */; };
 		1BCE93722C5BC2C7006820CA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BCE93712C5BC2C7006820CA /* Preview Assets.xcassets */; };
 		1BCE937B2C5BC338006820CA /* AlamofireClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCE937A2C5BC338006820CA /* AlamofireClient.swift */; };
@@ -21,12 +23,16 @@
 		1BCE938D2C5BC40F006820CA /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCE938C2C5BC40F006820CA /* ResultsView.swift */; };
 		1BCE938F2C5BC423006820CA /* TransferSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCE938E2C5BC423006820CA /* TransferSelectionView.swift */; };
 		1BCE93922C5BC43A006820CA /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1BCE93912C5BC43A006820CA /* Alamofire */; };
+		1BDB6CFF2C5C0ABD0029A10D /* Measure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDB6CFE2C5C0ABD0029A10D /* Measure.swift */; };
+		1BDB6D012C5C10570029A10D /* MeasureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDB6D002C5C10570029A10D /* MeasureView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B90EBD32C5BC9420003AB87 /* BenchmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenchmarkView.swift; sourceTree = "<group>"; };
+		1B90EBD52C5BCE360003AB87 /* RunBenchmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunBenchmarkView.swift; sourceTree = "<group>"; };
 		1BCE93662C5BC2C6006820CA /* mptcp-example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mptcp-example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BCE93692C5BC2C6006820CA /* mptcp_exampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mptcp_exampleApp.swift; sourceTree = "<group>"; };
-		1BCE936B2C5BC2C6006820CA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1BCE936B2C5BC2C6006820CA /* CheckMPTCPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMPTCPView.swift; sourceTree = "<group>"; };
 		1BCE936D2C5BC2C7006820CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1BCE936F2C5BC2C7006820CA /* mptcp_example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = mptcp_example.entitlements; sourceTree = "<group>"; };
 		1BCE93712C5BC2C7006820CA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -39,6 +45,8 @@
 		1BCE938A2C5BC3FA006820CA /* MPTCPModeSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPTCPModeSelectionView.swift; sourceTree = "<group>"; };
 		1BCE938C2C5BC40F006820CA /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
 		1BCE938E2C5BC423006820CA /* TransferSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferSelectionView.swift; sourceTree = "<group>"; };
+		1BDB6CFE2C5C0ABD0029A10D /* Measure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Measure.swift; sourceTree = "<group>"; };
+		1BDB6D002C5C10570029A10D /* MeasureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,10 +84,12 @@
 				1BCE93822C5BC383006820CA /* Extensions */,
 				1BCE93782C5BC31D006820CA /* Models */,
 				1BCE93692C5BC2C6006820CA /* mptcp_exampleApp.swift */,
-				1BCE936B2C5BC2C6006820CA /* ContentView.swift */,
+				1BCE936B2C5BC2C6006820CA /* CheckMPTCPView.swift */,
 				1BCE936D2C5BC2C7006820CA /* Assets.xcassets */,
 				1BCE936F2C5BC2C7006820CA /* mptcp_example.entitlements */,
 				1BCE93702C5BC2C7006820CA /* Preview Content */,
+				1B90EBD32C5BC9420003AB87 /* BenchmarkView.swift */,
+				1B90EBD52C5BCE360003AB87 /* RunBenchmarkView.swift */,
 			);
 			path = "mptcp-example";
 			sourceTree = "<group>";
@@ -97,6 +107,7 @@
 			children = (
 				1BCE93792C5BC327006820CA /* Clients */,
 				1BCE93802C5BC36C006820CA /* Transfers.swift */,
+				1BDB6CFE2C5C0ABD0029A10D /* Measure.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -126,6 +137,7 @@
 				1BCE938A2C5BC3FA006820CA /* MPTCPModeSelectionView.swift */,
 				1BCE938C2C5BC40F006820CA /* ResultsView.swift */,
 				1BCE938E2C5BC423006820CA /* TransferSelectionView.swift */,
+				1BDB6D002C5C10570029A10D /* MeasureView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -206,16 +218,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B90EBD62C5BCE360003AB87 /* RunBenchmarkView.swift in Sources */,
 				1BCE93812C5BC36C006820CA /* Transfers.swift in Sources */,
 				1BCE938B2C5BC3FA006820CA /* MPTCPModeSelectionView.swift in Sources */,
-				1BCE936C2C5BC2C6006820CA /* ContentView.swift in Sources */,
+				1BCE936C2C5BC2C6006820CA /* CheckMPTCPView.swift in Sources */,
 				1BCE938D2C5BC40F006820CA /* ResultsView.swift in Sources */,
 				1BCE937B2C5BC338006820CA /* AlamofireClient.swift in Sources */,
+				1BDB6CFF2C5C0ABD0029A10D /* Measure.swift in Sources */,
 				1BCE936A2C5BC2C6006820CA /* mptcp_exampleApp.swift in Sources */,
 				1BCE93872C5BC3D6006820CA /* ClientSelectionView.swift in Sources */,
 				1BCE937D2C5BC34A006820CA /* MPTCPClient.swift in Sources */,
+				1B90EBD42C5BC9420003AB87 /* BenchmarkView.swift in Sources */,
 				1BCE93842C5BC3A3006820CA /* MultipathServiceType+Name.swift in Sources */,
 				1BCE938F2C5BC423006820CA /* TransferSelectionView.swift in Sources */,
+				1BDB6D012C5C10570029A10D /* MeasureView.swift in Sources */,
 				1BCE937F2C5BC35C006820CA /* URLSessionClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
