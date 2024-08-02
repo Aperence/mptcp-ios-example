@@ -15,7 +15,7 @@ struct MPTCPModeSelectionView: View{
     var body: some View {
         Picker("MPTCP mode", selection: $mptcp_mode){
             ForEach(MPTCPMode.allCases){ mode in
-                Text(mode.name)
+                Text(mode.name).tag(mode.name)
             }
         }
         .pickerStyle(.segmented)

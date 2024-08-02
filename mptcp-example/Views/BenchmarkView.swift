@@ -9,11 +9,10 @@ import SwiftUI
 
 struct BenchmarkView: View {
     @State private var showingRunBenchmark = false
-    @State private var measures: [Measure] = [
-        Measure(mode: .handover, transfer: .download_1M, measures: [200, 300]),
-        Measure(mode: .none, transfer: .download_1M, measures: [400, 500])
-    ]
+    @Binding var measures: [Measure]
     @State private var newMeasure = Measure()
+    @Environment(\.scenePhase) private var scenePhase
+    var onSceneChange: () -> Void
     
     var body: some View {
         NavigationStack{
@@ -30,8 +29,9 @@ struct BenchmarkView: View {
             }.sheet(isPresented: $showingRunBenchmark, onDismiss: {
                 showingRunBenchmark = false
             }, content: {
-                RunBenchmarkView(measure: $newMeasure){
+                NewBenchmarkView(measure: $newMeasure){
                     measures.insert(newMeasure, at: 0)
+                    newMeasure = Measure()
                 } onClosed: {
                     newMeasure = Measure()
                 }
@@ -43,11 +43,13 @@ struct BenchmarkView: View {
                         Label("Run benchmark", systemImage: "plus")
                     }
                 }
+            }.onChange(of: scenePhase){
+                if scenePhase == .inactive { onSceneChange()}
             }
         }
     }
 }
 
 #Preview {
-    BenchmarkView()
+    BenchmarkView(measures: .constant([])){}
 }

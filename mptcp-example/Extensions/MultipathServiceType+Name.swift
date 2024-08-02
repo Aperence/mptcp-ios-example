@@ -8,7 +8,7 @@
 import Foundation
 
 extension URLSessionConfiguration.MultipathServiceType : CaseIterable {
-    public static var allCases: [URLSessionConfiguration.MultipathServiceType] = [.none, .handover, .aggregate, .interactive]
+    public static var allCases: [URLSessionConfiguration.MultipathServiceType] = [.none, .handover, .interactive, .aggregate]
 }
 
 extension URLSessionConfiguration.MultipathServiceType : Identifiable{
@@ -32,6 +32,19 @@ extension URLSessionConfiguration.MultipathServiceType{
     }
     
     var description: String {
-        ""
+        switch self{
+        case .none:
+            "Don't use MPTCP at all"
+        case .handover:
+            "Provide seamless handover between Wi-Fi and cellular if the connection becomes slow/lossy"
+        case .interactive:
+            "Use the interface with the lowest delay"
+        case .aggregate:
+            "Send data in parallel on different interfaces to provide higher bandwidth"
+        @unknown default:
+            "Unknown"
+        }
     }
 }
+
+extension URLSessionConfiguration.MultipathServiceType: Codable {}

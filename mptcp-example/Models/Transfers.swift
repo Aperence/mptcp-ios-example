@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Transfers: CaseIterable, Identifiable{
+enum Transfers: CaseIterable, Identifiable, Codable{
     var id: Self  { self }
     
     case check
@@ -21,13 +21,13 @@ enum Transfers: CaseIterable, Identifiable{
         case .check:
             "Check"
         case .download_1M:
-            "1M"
+            "1MB"
         case .download_10M:
-            "10M"
+            "10MB"
         case .download_100M:
-            "100M"
+            "100MB"
         case .download_1000M:
-            "1000M"
+            "1000MB"
         }
     }
     

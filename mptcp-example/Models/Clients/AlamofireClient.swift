@@ -21,17 +21,25 @@ extension RequestError: LocalizedError{
         }
 }
 
-class AlamofireClient : MPTCPClient{
+struct AlamofireClient : MPTCPClient{
     
     var name: String = "AlamofireClient"
     var id: String { name }
     
     private var session: Session = Session.default
     
-    func set_mode(mode: URLSessionConfiguration.MultipathServiceType){
-        let conf = URLSessionConfiguration.default
-        conf.multipathServiceType = mode
-        session = Session(configuration: conf)
+    private var _mode: URLSessionConfiguration.MultipathServiceType = .none
+    
+    var mode: URLSessionConfiguration.MultipathServiceType{
+        set{
+            _mode = newValue
+            let conf = URLSessionConfiguration.default
+            conf.multipathServiceType = _mode
+            session = Session(configuration: conf)
+        }
+        get{
+            return _mode
+        }
     }
     
     func fetch(url: URL) async throws -> Data {

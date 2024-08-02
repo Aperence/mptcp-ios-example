@@ -14,32 +14,36 @@ struct CheckMPTCPView: View {
     @State private var using_mptcp: Bool = false
     @State private var didError = false
     @State private var savedError: Error? = nil
-    @State private var mptcp_mode: MPTCPMode = .none
     @State private var client: any MPTCPClient = ContainerClient.client_list[0].client
     @State private var response_time: UInt64 = 0
     
     var body: some View {
         NavigationStack {
             VStack {
-                
-                MPTCPModeSelectionView(mptcp_mode: $mptcp_mode){
-                    refresh()
+                Form{
+                    Section("Client selection"){
+                        ClientSelectionView(client: $client){
+                            refresh()
+                        }
+                    }
+                    
+                    Section("MPTCP Mode"){
+                        MPTCPModeSelectionView(mptcp_mode: $client.mode){
+                            refresh()
+                        }
+                        Text(client.mode.description)
+                    }
+
+                    Section("Results"){
+                        if loading{
+                            ProgressView()
+                        }else {
+                            ResultsView(using_mptcp: using_mptcp, tranfer: .check, response_time: response_time)
+                        }
+                    }.listRowSeparator(.hidden)
+                    
                 }
-                
-                ClientSelectionView(client: $client){
-                    refresh()
-                }
-                
-                Spacer()
-                
-                if loading{
-                    ProgressView()
-                }else {
-                    ResultsView(using_mptcp: using_mptcp, tranfer: .check, response_time: response_time)
-                }
-                Spacer()
             }
-            .padding()
             .toolbar{
                 ToolbarItem(placement: .topBarTrailing){
                     Button{
@@ -67,7 +71,6 @@ struct CheckMPTCPView: View {
 
     func refresh(){
         Task{
-            client.set_mode(mode: mptcp_mode)
             await fetch()
         }
     }

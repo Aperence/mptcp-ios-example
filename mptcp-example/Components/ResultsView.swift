@@ -28,15 +28,15 @@ struct ResultsView: View {
                 HStack{
                     Image(systemName: "checkmark.seal.fill").foregroundColor(.green)
                     Text("You are using MPTCP")
-                }.font(.title)
+                }.font(.title2)
             }else{
                 HStack{
                     Image(systemName: "xmark.seal.fill").foregroundColor(.red)
                     Text("You aren't using MPTCP")
-                }.font(.title)
+                }.font(.title2)
             }
         }
-        Text(response_time_str).font(.title3)
+        Text(response_time_str)
         if tranfer != .check{
             Text(bandwidth_str).font(.title3)
         }

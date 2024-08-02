@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B499A7F2C5CD17E00744D38 /* MeasureStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B499A7E2C5CD17E00744D38 /* MeasureStore.swift */; };
+		1B499A812C5CE23000744D38 /* NewMeasureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B499A802C5CE23000744D38 /* NewMeasureView.swift */; };
 		1B90EBD42C5BC9420003AB87 /* BenchmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B90EBD32C5BC9420003AB87 /* BenchmarkView.swift */; };
-		1B90EBD62C5BCE360003AB87 /* RunBenchmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B90EBD52C5BCE360003AB87 /* RunBenchmarkView.swift */; };
+		1B90EBD62C5BCE360003AB87 /* NewBenchmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B90EBD52C5BCE360003AB87 /* NewBenchmarkView.swift */; };
 		1BCE936A2C5BC2C6006820CA /* mptcp_exampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCE93692C5BC2C6006820CA /* mptcp_exampleApp.swift */; };
 		1BCE936C2C5BC2C6006820CA /* CheckMPTCPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCE936B2C5BC2C6006820CA /* CheckMPTCPView.swift */; };
 		1BCE936E2C5BC2C7006820CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BCE936D2C5BC2C7006820CA /* Assets.xcassets */; };
@@ -28,8 +30,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B499A7E2C5CD17E00744D38 /* MeasureStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureStore.swift; sourceTree = "<group>"; };
+		1B499A802C5CE23000744D38 /* NewMeasureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMeasureView.swift; sourceTree = "<group>"; };
 		1B90EBD32C5BC9420003AB87 /* BenchmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenchmarkView.swift; sourceTree = "<group>"; };
-		1B90EBD52C5BCE360003AB87 /* RunBenchmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunBenchmarkView.swift; sourceTree = "<group>"; };
+		1B90EBD52C5BCE360003AB87 /* NewBenchmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBenchmarkView.swift; sourceTree = "<group>"; };
 		1BCE93662C5BC2C6006820CA /* mptcp-example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mptcp-example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BCE93692C5BC2C6006820CA /* mptcp_exampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mptcp_exampleApp.swift; sourceTree = "<group>"; };
 		1BCE936B2C5BC2C6006820CA /* CheckMPTCPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMPTCPView.swift; sourceTree = "<group>"; };
@@ -61,6 +65,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B499A7D2C5CD11400744D38 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1BCE936B2C5BC2C6006820CA /* CheckMPTCPView.swift */,
+				1B90EBD32C5BC9420003AB87 /* BenchmarkView.swift */,
+				1B90EBD52C5BCE360003AB87 /* NewBenchmarkView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		1BCE935D2C5BC2C6006820CA = {
 			isa = PBXGroup;
 			children = (
@@ -80,16 +94,14 @@
 		1BCE93682C5BC2C6006820CA /* mptcp-example */ = {
 			isa = PBXGroup;
 			children = (
+				1B499A7D2C5CD11400744D38 /* Views */,
 				1BCE93852C5BC3BE006820CA /* Components */,
 				1BCE93822C5BC383006820CA /* Extensions */,
 				1BCE93782C5BC31D006820CA /* Models */,
 				1BCE93692C5BC2C6006820CA /* mptcp_exampleApp.swift */,
-				1BCE936B2C5BC2C6006820CA /* CheckMPTCPView.swift */,
 				1BCE936D2C5BC2C7006820CA /* Assets.xcassets */,
 				1BCE936F2C5BC2C7006820CA /* mptcp_example.entitlements */,
 				1BCE93702C5BC2C7006820CA /* Preview Content */,
-				1B90EBD32C5BC9420003AB87 /* BenchmarkView.swift */,
-				1B90EBD52C5BCE360003AB87 /* RunBenchmarkView.swift */,
 			);
 			path = "mptcp-example";
 			sourceTree = "<group>";
@@ -108,6 +120,7 @@
 				1BCE93792C5BC327006820CA /* Clients */,
 				1BCE93802C5BC36C006820CA /* Transfers.swift */,
 				1BDB6CFE2C5C0ABD0029A10D /* Measure.swift */,
+				1B499A7E2C5CD17E00744D38 /* MeasureStore.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -138,6 +151,7 @@
 				1BCE938C2C5BC40F006820CA /* ResultsView.swift */,
 				1BCE938E2C5BC423006820CA /* TransferSelectionView.swift */,
 				1BDB6D002C5C10570029A10D /* MeasureView.swift */,
+				1B499A802C5CE23000744D38 /* NewMeasureView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -218,7 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B90EBD62C5BCE360003AB87 /* RunBenchmarkView.swift in Sources */,
+				1B90EBD62C5BCE360003AB87 /* NewBenchmarkView.swift in Sources */,
 				1BCE93812C5BC36C006820CA /* Transfers.swift in Sources */,
 				1BCE938B2C5BC3FA006820CA /* MPTCPModeSelectionView.swift in Sources */,
 				1BCE936C2C5BC2C6006820CA /* CheckMPTCPView.swift in Sources */,
@@ -230,6 +244,8 @@
 				1BCE937D2C5BC34A006820CA /* MPTCPClient.swift in Sources */,
 				1B90EBD42C5BC9420003AB87 /* BenchmarkView.swift in Sources */,
 				1BCE93842C5BC3A3006820CA /* MultipathServiceType+Name.swift in Sources */,
+				1B499A7F2C5CD17E00744D38 /* MeasureStore.swift in Sources */,
+				1B499A812C5CE23000744D38 /* NewMeasureView.swift in Sources */,
 				1BCE938F2C5BC423006820CA /* TransferSelectionView.swift in Sources */,
 				1BDB6D012C5C10570029A10D /* MeasureView.swift in Sources */,
 				1BCE937F2C5BC35C006820CA /* URLSessionClient.swift in Sources */,

@@ -25,8 +25,11 @@ struct MeasureView: View {
             Section("Record date"){
                 Text(measure.date.formatted(date: .numeric, time: .standard))
             }
+            Section("Client"){
+                Text(measure.client.name)
+            }
             Section("Mode"){
-                Text(measure.mode.name)
+                Text(measure.client.mode.name)
             }
             Section("Transfer"){
                 Text(measure.transfer.name)
@@ -53,5 +56,5 @@ struct MeasureView: View {
 }
 
 #Preview {
-    MeasureView(measure: Measure(mode: .handover, transfer: .download_1M, measures: [200, 300, 400, 500]))
+    MeasureView(measure: Measure(transfer: .download_1M, measures: [200, 300, 400, 500]))
 }

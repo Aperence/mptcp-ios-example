@@ -7,17 +7,25 @@
 
 import Foundation
 
-class URLSessionClient : MPTCPClient{
+struct URLSessionClient : MPTCPClient{
     
     var name: String = "URLSessionClient"
     var id: String { name }
     
     private var session: URLSession = URLSession.shared
     
-    func set_mode(mode: URLSessionConfiguration.MultipathServiceType){
-        let conf = URLSessionConfiguration.default
-        conf.multipathServiceType = mode
-        session = URLSession(configuration: conf)
+    private var _mode: URLSessionConfiguration.MultipathServiceType = .none
+    
+    var mode: URLSessionConfiguration.MultipathServiceType{
+        set{
+            _mode = newValue
+            let conf = URLSessionConfiguration.default
+            conf.multipathServiceType = _mode
+            session = URLSession(configuration: conf)
+        }
+        get{
+            return _mode
+        }
     }
     
     func fetch(url: URL) async throws -> Data {
