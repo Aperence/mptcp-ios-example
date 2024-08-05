@@ -6,22 +6,27 @@
 //
 
 import SwiftUI
+import UniformTypeIdentifiers
 
 struct BenchmarkView: View {
     @State private var showingRunBenchmark = false
+    @State private var showingExport = false
     @Binding var measures: [Measure]
     @State private var newMeasure = Measure()
     @Environment(\.scenePhase) private var scenePhase
     var onSceneChange: () -> Void
+    private var document: MeasurementFile {
+        MeasurementFile(measurements: measures)
+    }
     
     var body: some View {
         NavigationStack{
             List{
-                ForEach(measures){measure in
+                ForEach($measures){ $measure in
                     NavigationLink(destination: {
-                        MeasureView(measure: measure)
+                        MeasureView(measure: $measure)
                     }, label: {
-                        Text("Record from \(measure.date.formatted(date: .numeric, time: .shortened))")
+                        Text("\(measure.client.name), \(measure.mode.name), \(measure.transfer.name)")
                     })
                 }.onDelete(perform: { indexSet in
                     measures.remove(atOffsets: indexSet)
@@ -43,8 +48,17 @@ struct BenchmarkView: View {
                         Label("Run benchmark", systemImage: "plus")
                     }
                 }
+                ToolbarItem(placement: .topBarLeading){
+                    Button{
+                        showingExport = true
+                    } label: {
+                        Label("Download measurements", systemImage: "square.and.arrow.down")
+                    }
+                }
             }.onChange(of: scenePhase){
                 if scenePhase == .inactive { onSceneChange()}
+            }.fileExporter(isPresented: $showingExport, document: document, contentType: .json, defaultFilename: "measures"){ result in
+                debugPrint(result)
             }
         }
     }

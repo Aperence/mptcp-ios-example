@@ -58,12 +58,6 @@ struct NewBenchmarkView: View {
         Task{ @MainActor in
             let task = Task{
                 doingRequest = true
-                //measure.client.mode = measure.mode
-                debugPrint(measure.client.mode.name)
-                // warm up
-                for _ in 0..<2{
-                    let _ = try await fetch()
-                }
                 for _ in 0..<numberRequests{
                     let response_time = try await fetch()
                     measure.measures.append(response_time)

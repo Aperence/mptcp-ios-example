@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MeasureView: View {
-    let measure: Measure
+    @Binding var measure: Measure
     var mean : Double {
         Double(measure.measures.reduce(0, {$0 + $1})) / Double(measure.measures.count)
     }
@@ -49,12 +49,14 @@ struct MeasureView: View {
             Section("Measures"){
                 ForEach(measure.measures, id: \.hashValue){ time in
                     Text("\(time) ms")
-                }
+                }.onDelete(perform: { indexSet in
+                    measure.measures.remove(atOffsets: indexSet)
+                })
             }
         }
     }
 }
 
 #Preview {
-    MeasureView(measure: Measure(transfer: .download_1M, measures: [200, 300, 400, 500]))
+    MeasureView(measure: .constant(Measure(transfer: .download_1M, measures: [200, 300, 400, 500])))
 }

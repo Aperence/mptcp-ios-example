@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B1D86FA2C60AF1100C1B5AF /* MeasurementFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1D86F92C60AF1100C1B5AF /* MeasurementFile.swift */; };
+		1B1D86FD2C60B3B200C1B5AF /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1D86FC2C60B3B200C1B5AF /* RequestError.swift */; };
+		1B1D87002C60B70B00C1B5AF /* mptcp-check.mov in Resources */ = {isa = PBXBuildFile; fileRef = 1B1D86FF2C60B70B00C1B5AF /* mptcp-check.mov */; };
 		1B499A7F2C5CD17E00744D38 /* MeasureStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B499A7E2C5CD17E00744D38 /* MeasureStore.swift */; };
 		1B499A812C5CE23000744D38 /* NewMeasureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B499A802C5CE23000744D38 /* NewMeasureView.swift */; };
 		1B90EBD42C5BC9420003AB87 /* BenchmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B90EBD32C5BC9420003AB87 /* BenchmarkView.swift */; };
@@ -30,8 +33,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B1D86F92C60AF1100C1B5AF /* MeasurementFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementFile.swift; sourceTree = "<group>"; };
+		1B1D86FC2C60B3B200C1B5AF /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
+		1B1D86FF2C60B70B00C1B5AF /* mptcp-check.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "mptcp-check.mov"; sourceTree = "<group>"; };
 		1B499A7E2C5CD17E00744D38 /* MeasureStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureStore.swift; sourceTree = "<group>"; };
 		1B499A802C5CE23000744D38 /* NewMeasureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMeasureView.swift; sourceTree = "<group>"; };
+		1B7608392C5D224E007F37AE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.markdown; };
 		1B90EBD32C5BC9420003AB87 /* BenchmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenchmarkView.swift; sourceTree = "<group>"; };
 		1B90EBD52C5BCE360003AB87 /* NewBenchmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBenchmarkView.swift; sourceTree = "<group>"; };
 		1BCE93662C5BC2C6006820CA /* mptcp-example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mptcp-example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +72,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B1D86FB2C60B34F00C1B5AF /* Measure */ = {
+			isa = PBXGroup;
+			children = (
+				1BDB6CFE2C5C0ABD0029A10D /* Measure.swift */,
+				1B499A7E2C5CD17E00744D38 /* MeasureStore.swift */,
+				1B1D86F92C60AF1100C1B5AF /* MeasurementFile.swift */,
+			);
+			path = Measure;
+			sourceTree = "<group>";
+		};
+		1B1D86FE2C60B3E700C1B5AF /* demos */ = {
+			isa = PBXGroup;
+			children = (
+				1B1D86FF2C60B70B00C1B5AF /* mptcp-check.mov */,
+			);
+			path = demos;
+			sourceTree = "<group>";
+		};
 		1B499A7D2C5CD11400744D38 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +103,8 @@
 		1BCE935D2C5BC2C6006820CA = {
 			isa = PBXGroup;
 			children = (
+				1B1D86FE2C60B3E700C1B5AF /* demos */,
+				1B7608392C5D224E007F37AE /* README.md */,
 				1BCE93682C5BC2C6006820CA /* mptcp-example */,
 				1BCE93672C5BC2C6006820CA /* Products */,
 			);
@@ -117,10 +144,9 @@
 		1BCE93782C5BC31D006820CA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1B1D86FB2C60B34F00C1B5AF /* Measure */,
 				1BCE93792C5BC327006820CA /* Clients */,
 				1BCE93802C5BC36C006820CA /* Transfers.swift */,
-				1BDB6CFE2C5C0ABD0029A10D /* Measure.swift */,
-				1B499A7E2C5CD17E00744D38 /* MeasureStore.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -131,6 +157,7 @@
 				1BCE937A2C5BC338006820CA /* AlamofireClient.swift */,
 				1BCE937C2C5BC34A006820CA /* MPTCPClient.swift */,
 				1BCE937E2C5BC35C006820CA /* URLSessionClient.swift */,
+				1B1D86FC2C60B3B200C1B5AF /* RequestError.swift */,
 			);
 			path = Clients;
 			sourceTree = "<group>";
@@ -221,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BCE93722C5BC2C7006820CA /* Preview Assets.xcassets in Resources */,
+				1B1D87002C60B70B00C1B5AF /* mptcp-check.mov in Resources */,
 				1BCE936E2C5BC2C7006820CA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -246,6 +274,8 @@
 				1BCE93842C5BC3A3006820CA /* MultipathServiceType+Name.swift in Sources */,
 				1B499A7F2C5CD17E00744D38 /* MeasureStore.swift in Sources */,
 				1B499A812C5CE23000744D38 /* NewMeasureView.swift in Sources */,
+				1B1D86FD2C60B3B200C1B5AF /* RequestError.swift in Sources */,
+				1B1D86FA2C60AF1100C1B5AF /* MeasurementFile.swift in Sources */,
 				1BCE938F2C5BC423006820CA /* TransferSelectionView.swift in Sources */,
 				1BDB6D012C5C10570029A10D /* MeasureView.swift in Sources */,
 				1BCE937F2C5BC35C006820CA /* URLSessionClient.swift in Sources */,

@@ -8,19 +8,6 @@
 import Foundation
 import Alamofire
 
-enum RequestError: Error{
-    case fetchingError
-}
-
-extension RequestError: LocalizedError{
-    public var errorDescription: String? {
-            switch self {
-            case .fetchingError:
-                return NSLocalizedString("Failed to fetch data from the server", comment: "Fetching error")
-            }
-        }
-}
-
 struct AlamofireClient : MPTCPClient{
     
     var name: String = "AlamofireClient"
