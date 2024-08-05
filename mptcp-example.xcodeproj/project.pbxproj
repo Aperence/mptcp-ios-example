@@ -10,6 +10,8 @@
 		1B1D86FA2C60AF1100C1B5AF /* MeasurementFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1D86F92C60AF1100C1B5AF /* MeasurementFile.swift */; };
 		1B1D86FD2C60B3B200C1B5AF /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1D86FC2C60B3B200C1B5AF /* RequestError.swift */; };
 		1B1D87002C60B70B00C1B5AF /* mptcp-check.mov in Resources */ = {isa = PBXBuildFile; fileRef = 1B1D86FF2C60B70B00C1B5AF /* mptcp-check.mov */; };
+		1B1D87032C60C39A00C1B5AF /* mptcp-new-benchmark.mov in Resources */ = {isa = PBXBuildFile; fileRef = 1B1D87012C60C39A00C1B5AF /* mptcp-new-benchmark.mov */; };
+		1B1D87042C60C39A00C1B5AF /* mptcp-export.mov in Resources */ = {isa = PBXBuildFile; fileRef = 1B1D87022C60C39A00C1B5AF /* mptcp-export.mov */; };
 		1B499A7F2C5CD17E00744D38 /* MeasureStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B499A7E2C5CD17E00744D38 /* MeasureStore.swift */; };
 		1B499A812C5CE23000744D38 /* NewMeasureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B499A802C5CE23000744D38 /* NewMeasureView.swift */; };
 		1B90EBD42C5BC9420003AB87 /* BenchmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B90EBD32C5BC9420003AB87 /* BenchmarkView.swift */; };
@@ -36,6 +38,8 @@
 		1B1D86F92C60AF1100C1B5AF /* MeasurementFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementFile.swift; sourceTree = "<group>"; };
 		1B1D86FC2C60B3B200C1B5AF /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		1B1D86FF2C60B70B00C1B5AF /* mptcp-check.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "mptcp-check.mov"; sourceTree = "<group>"; };
+		1B1D87012C60C39A00C1B5AF /* mptcp-new-benchmark.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "mptcp-new-benchmark.mov"; sourceTree = "<group>"; };
+		1B1D87022C60C39A00C1B5AF /* mptcp-export.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "mptcp-export.mov"; sourceTree = "<group>"; };
 		1B499A7E2C5CD17E00744D38 /* MeasureStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureStore.swift; sourceTree = "<group>"; };
 		1B499A802C5CE23000744D38 /* NewMeasureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMeasureView.swift; sourceTree = "<group>"; };
 		1B7608392C5D224E007F37AE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.markdown; };
@@ -86,6 +90,8 @@
 			isa = PBXGroup;
 			children = (
 				1B1D86FF2C60B70B00C1B5AF /* mptcp-check.mov */,
+				1B1D87012C60C39A00C1B5AF /* mptcp-new-benchmark.mov */,
+				1B1D87022C60C39A00C1B5AF /* mptcp-export.mov */,
 			);
 			path = demos;
 			sourceTree = "<group>";
@@ -248,8 +254,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BCE93722C5BC2C7006820CA /* Preview Assets.xcassets in Resources */,
+				1B1D87032C60C39A00C1B5AF /* mptcp-new-benchmark.mov in Resources */,
 				1B1D87002C60B70B00C1B5AF /* mptcp-check.mov in Resources */,
 				1BCE936E2C5BC2C7006820CA /* Assets.xcassets in Resources */,
+				1B1D87042C60C39A00C1B5AF /* mptcp-export.mov in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -36,19 +36,34 @@ struct MeasureView: View {
             }
             Section("Statistics"){
                 HStack{
-                    Text("Mean")
+                    Text("Mean response time")
                     Spacer()
                     Text(String(format: "%.2f ms", mean))
                 }
                 HStack{
-                    Text("Std")
+                    Text("Std response time")
                     Spacer()
                     Text(String(format: "%.2f ms", std))
                 }
+                HStack{
+                    Text("Mean bandwidth")
+                    Spacer()
+                    Text(String(format: "%.2f Mbps", measure.bandwidth(for: mean)))
+                }
             }
             Section("Measures"){
+                HStack{
+                    Text("Response time")
+                    Spacer()
+                    Text("Bandwidth")
+                }
                 ForEach(measure.measures, id: \.hashValue){ time in
-                    Text("\(time) ms")
+                    HStack{
+                        Text("\(time) ms")
+                        Spacer()
+                        Text(String(format: "%.2f Mbps", measure.bandwidth(for: time)))
+                    }
+                    
                 }.onDelete(perform: { indexSet in
                     measure.measures.remove(atOffsets: indexSet)
                 })

@@ -46,6 +46,7 @@ enum Transfers: CaseIterable, Identifiable, Codable{
         }
     }
     
+    // size of download in bits
     var size: Int{
         switch self{
         case .check:

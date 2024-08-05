@@ -36,6 +36,17 @@ struct Measure: Identifiable, Codable {
         self.containerClient = ContainerClient(client: client)
     }
     
+    /*
+      Return the estimated bandwith in Mbps according to the response time in ms
+     */
+    func bandwidth(for response_time: UInt64) -> Double{
+        return Double(transfer.size) / Double(response_time) / 1000
+    }
+    
+    func bandwidth(for response_time: Double) -> Double{
+        return Double(transfer.size) / response_time / 1000
+    }
+    
     enum CodingKeys: String, CodingKey {
         case id, date, client, measures
     }
